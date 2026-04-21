@@ -1,17 +1,22 @@
+import { useState } from "react";
+
 function App() {
+  const [name, setName] = useState("");
+
   return (
     <div>
       <h1>Student Management System</h1>
 
       <h2>Add Student</h2>
 
-      <input type="text" placeholder="Enter Name" />
-      <br /><br />
+      <input
+        type="text"
+        placeholder="Enter Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
-      <input type="text" placeholder="Enter Class" />
-      <br /><br />
-
-      <button>Add Student</button>
+      <p>Typed Name: {name}</p>
 
       <hr />
 
