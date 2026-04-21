@@ -2,9 +2,17 @@ import { useState } from "react";
 
 function App() {
   const [name, setName] = useState("");
+  const [students, setStudents] = useState([]);
+
+  const addStudent = () => {
+    if (name.trim() === "") return;
+
+    setStudents([...students, name]);
+    setName("");
+  };
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <h1>Student Management System</h1>
 
       <h2>Add Student</h2>
@@ -16,12 +24,21 @@ function App() {
         onChange={(e) => setName(e.target.value)}
       />
 
-      <p>Typed Name: {name}</p>
+      <button onClick={addStudent}>Add Student</button>
 
       <hr />
 
       <h2>Student List</h2>
-      <p>No students added yet</p>
+
+      {students.length === 0 ? (
+        <p>No students added yet</p>
+      ) : (
+        <ul>
+          {students.map((student, index) => (
+            <li key={index}>{student}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
