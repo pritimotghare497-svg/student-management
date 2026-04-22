@@ -4,10 +4,13 @@ import JobList from "./components/JobList";
 
 function App() {
   return (
-    <div>
+    <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
       <Navbar />
-      <Home />
-      <JobList />
+
+      <main>
+        <Home />
+        <JobList />
+      </main>
     </div>
   );
 }
