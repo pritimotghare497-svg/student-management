@@ -1,10 +1,13 @@
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import JobList from "./components/JobList";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <h1>Job Portal Project 🚀</h1>
+      <Home />
+      <JobList />
     </div>
   );
 }
