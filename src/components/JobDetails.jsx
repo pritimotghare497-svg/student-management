@@ -1,8 +1,13 @@
 import { useParams } from "react-router-dom";
-import { jobs } from "../data/jobs";
 
 function JobDetails() {
   const { id } = useParams();
+
+  const jobs = [
+    { id: 1, title: "Frontend Developer", company: "Google", desc: "React + UI development role" },
+    { id: 2, title: "Backend Developer", company: "Amazon", desc: "Spring Boot + APIs development role" },
+    { id: 3, title: "Full Stack Developer", company: "Microsoft", desc: "Frontend + Backend full stack role" },
+  ];
 
   const job = jobs.find((j) => j.id === Number(id));
 
@@ -20,7 +25,6 @@ function JobDetails() {
     >
       <h1>{job.title}</h1>
       <h3 style={{ color: "#4f46e5" }}>{job.company}</h3>
-
       <p style={{ marginTop: "10px", color: "#64748b" }}>
         {job.desc}
       </p>
