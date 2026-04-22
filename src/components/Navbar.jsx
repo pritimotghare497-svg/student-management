@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   const linkStyle = {
     margin: "0 12px",
-    cursor: "pointer",
     color: "#0f172a",
     fontWeight: "500",
-    transition: "0.3s",
+    textDecoration: "none",
   };
 
   return (
@@ -23,29 +24,9 @@ function Navbar() {
       </h2>
 
       <div>
-        <span
-          style={linkStyle}
-          onMouseEnter={(e) => (e.target.style.color = "#4f46e5")}
-          onMouseLeave={(e) => (e.target.style.color = "#0f172a")}
-        >
-          Home
-        </span>
-
-        <span
-          style={linkStyle}
-          onMouseEnter={(e) => (e.target.style.color = "#4f46e5")}
-          onMouseLeave={(e) => (e.target.style.color = "#0f172a")}
-        >
-          Jobs
-        </span>
-
-        <span
-          style={linkStyle}
-          onMouseEnter={(e) => (e.target.style.color = "#4f46e5")}
-          onMouseLeave={(e) => (e.target.style.color = "#0f172a")}
-        >
-          Login
-        </span>
+        <Link to="/" style={linkStyle}>Home</Link>
+        <Link to="/jobs" style={linkStyle}>Jobs</Link>
+        <Link to="/login" style={linkStyle}>Login</Link>
       </div>
     </nav>
   );
